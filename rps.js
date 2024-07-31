@@ -1,5 +1,12 @@
 
+const rps = ['ROCK','SCISSORS', 'PAPER']
 
+
+function getRandomNumber(maxValue){
+
+    return Math.floor((Math.random() * maxValue));
+
+}
 
 function getComputerChoice(){
 
@@ -30,7 +37,9 @@ function rpsLogic(choice1, choice2){
 }
 
 
-let text1 = 'ROCK';
-let text2 = 'PAPER';
 
-console.log(rpsLogic(text1,text2))
+
+// let text1 = 'ROCK';
+// let text2 = 'PAPER';
+
+// console.log(rpsLogic(text1,text2))
