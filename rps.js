@@ -10,6 +10,9 @@ function getRandomNumber(maxValue){
 
 function getComputerChoice(){
 
+    let computerChoice = getRandomNumber(3);
+    return rps[computerChoice];
+
 }
 
 function getHumanChoice(){
@@ -38,8 +41,12 @@ function rpsLogic(choice1, choice2){
 
 
 
+for(i=0;i<10;i++){
+    console.log(getComputerChoice());
+}
+
 
 // let text1 = 'ROCK';
-// let text2 = 'PAPER';
+// let text2 = 'PAPER';aaaaaaaasssssss
 
 // console.log(rpsLogic(text1,text2))
