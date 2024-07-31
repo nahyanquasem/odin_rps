@@ -17,6 +17,8 @@ function getComputerChoice(){
 
 function getHumanChoice(){
 
+    let humanChoice = prompt("Please choose ROCK, SCISSORS, PAPER");
+
 }
 
 function rpsLogic(choice1, choice2){
@@ -39,11 +41,6 @@ function rpsLogic(choice1, choice2){
     
 }
 
-
-
-for(i=0;i<10;i++){
-    console.log(getComputerChoice());
-}
 
 
 // let text1 = 'ROCK';
