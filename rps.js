@@ -67,10 +67,7 @@ function rpsLogic(choice1, choice2){
 
     // Rock beats scissors, scissors beat paper, and paper beats rock.
 
-    if( choice1==='ROCK' && choice2==='ROCK') return 0;
-    if( choice1==='SCISSORS' && choice2==='SCISSORS') return 0;
-    if( choice1==='PAPER' && choice2==='PAPER') return 0;
-
+    if (choice1 === choice2) return 0;
 
     if( (choice1==='ROCK' && choice2==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return 1;}
     if( (choice1==='SCISSORS' && choice2==='ROCK') ) {console.log('ROCK beats SCISSORS');return 2;}
