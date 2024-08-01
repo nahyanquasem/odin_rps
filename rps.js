@@ -7,7 +7,7 @@ let computerScore = 0;
 function getRandomNumber(maxValue){
 
     return Math.floor((Math.random() * maxValue));
-    
+
 }
 
 function getComputerChoice(){
@@ -48,12 +48,10 @@ function playRound(){
     else if (outcome === 1){
         console.log('Computer wins');
         computerScore = computerScore+1;
-        console.log(computerScore)
     }
     else if (outcome === 2){
         console.log('Human wins');
         humanScore = humanScore+1;
-        console.log(humanScore);
     }
 
     console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`);
@@ -85,6 +83,6 @@ let i = 0;
 
 for(i=0;i<5;i++){
 
-    // playRound();
+    playRound();
 
 }
