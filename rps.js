@@ -35,34 +35,6 @@ function getHumanChoice(){
 
 }
 
-function playRound(){
-
-    let computerInput = getComputerChoice();
-    let humanInput = getHumanChoice();
-
-    console.log(`Computer chose ${computerInput}`);
-    console.log(`Human chose ${humanInput}`)
-
-    let outcome = rpsLogic(computerInput, humanInput);
-
-    if (outcome === 0){
-        console.log('DRAW');
-    }
-
-    else if (outcome === 1){
-        console.log('Computer wins');
-        computerScore = computerScore+1;
-    }
-    else if (outcome === 2){
-        console.log('Human wins');
-        humanScore = humanScore+1;
-    }
-
-    console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`);
-
-
-}
-
 function rpsLogic(choice1, choice2){
 
     // Rock beats scissors, scissors beat paper, and paper beats rock.
@@ -80,10 +52,49 @@ function rpsLogic(choice1, choice2){
     
 }
 
-let i = 0;
+function playRound(){
 
-for(i=0;i<5;i++){
+    let computerInput = getComputerChoice();
+    let humanInput = getHumanChoice();
 
-    // playRound();
+    console.log(`Computer chose ${computerInput}`);
+    console.log(`Human chose ${humanInput}`)
 
+    let outcome = rpsLogic(computerInput, humanInput);
+
+    if (outcome === 0){
+        console.log('DRAW this round');
+    }
+
+    else if (outcome === 1){
+        console.log('Computer wins round');
+        computerScore = computerScore+1;
+    }
+    else if (outcome === 2){
+        console.log('Human wins round');
+        humanScore = humanScore+1;
+    }
+
+    console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`);
 }
+
+
+function playGame(){
+    console.log('Best of 5 Match, first to 3 points wins');
+
+    let round = 1;
+
+    for(round = 1; round<=5; round++){
+        console.log(`#############   Round ${round}   #############`);
+        playRound();
+    }
+
+    if(computerScore===humanScore) {console.log('Match is a draw');}
+    else if (computerScore > humanScore) {console.log(`Computer wins with ${computerScore} points`);}
+    else {console.log(`Human wins with ${humanScore} points`);}
+
+    console.log('Game over');
+}
+
+
+// playGame();
