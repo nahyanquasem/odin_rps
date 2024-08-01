@@ -44,8 +44,8 @@ function rpsLogic(choice1, choice2){
     if( (choice1==='ROCK' && choice2==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return 1;}
     if( (choice1==='SCISSORS' && choice2==='ROCK') ) {console.log('ROCK beats SCISSORS');return 2;}
 
-    if( (choice1==='ROCK' && choice2==='PAPER') ) {console.log('PAPER beats ROCK');return 2;}
     if( (choice1==='PAPER' && choice2==='ROCK') ) {console.log('PAPER beats ROCK');return 1;}
+    if( (choice1==='ROCK' && choice2==='PAPER') ) {console.log('PAPER beats ROCK');return 2;}
 
     if( (choice1==='SCISSORS' && choice2==='PAPER') ) {console.log('SCISSORS beats PAPER');return 1;}
     if( (choice1==='PAPER' && choice2==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return 2;}
@@ -70,6 +70,7 @@ function playRound(){
         console.log('Computer wins round');
         computerScore = computerScore+1;
     }
+
     else if (outcome === 2){
         console.log('Human wins round');
         humanScore = humanScore+1;
@@ -97,4 +98,4 @@ function playGame(){
 }
 
 
-// playGame();
+playGame();
