@@ -1,11 +1,13 @@
 
-const rps = ['ROCK','SCISSORS', 'PAPER']
+const rps = ['ROCK','SCISSORS', 'PAPER'];
+let humanScore = 0;
+let computerScore = 0;
 
 
 function getRandomNumber(maxValue){
 
     return Math.floor((Math.random() * maxValue));
-
+    
 }
 
 function getComputerChoice(){
@@ -15,9 +17,47 @@ function getComputerChoice(){
 
 }
 
+function validateHumanChoice(text_input=""){
+    
+    return rps.includes(text_input);
+}
+
 function getHumanChoice(){
 
-    let humanChoice = prompt("Please choose ROCK, SCISSORS, PAPER");
+    let humanChoice = prompt("Please choose ROCK, SCISSORS, PAPER").toUpperCase();
+
+    if(!validateHumanChoice(humanChoice)) return;
+    else return humanChoice;
+
+}
+
+function playRound(){
+
+    let computerInput = getComputerChoice();
+    let humanInput = getHumanChoice();
+
+    console.log(`Computer chose ${computerInput}`);
+    console.log(`Human chose ${humanInput}`)
+
+    let outcome = rpsLogic(computerInput, humanInput);
+
+    if (outcome === 0){
+        console.log('DRAW');
+    }
+
+    else if (outcome === 1){
+        console.log('Computer wins');
+        computerScore = computerScore+1;
+        console.log(computerScore)
+    }
+    else if (outcome === 2){
+        console.log('Human wins');
+        humanScore = humanScore+1;
+        console.log(humanScore);
+    }
+
+    console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`);
+
 
 }
 
@@ -41,9 +81,10 @@ function rpsLogic(choice1, choice2){
     
 }
 
+let i = 0;
 
+for(i=0;i<5;i++){
 
-// let text1 = 'ROCK';
-// let text2 = 'PAPER';aaaaaaaasssssss
+    // playRound();
 
-// console.log(rpsLogic(text1,text2))
+}
