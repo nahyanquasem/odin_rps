@@ -85,9 +85,11 @@ function playGame(){
 
     let round = 1;
 
-    for(round = 1; round<=5; round++){
+    while( (round <=5) && ( (computerScore != 3) || (humanScore != 3) )){
+
         console.log(`#############   Round ${round}   #############`);
         playRound();
+        round++;
     }
 
     if(computerScore===humanScore) {console.log('Match is a draw');}
@@ -96,6 +98,5 @@ function playGame(){
 
     console.log('Game over');
 }
-
 
 playGame();
