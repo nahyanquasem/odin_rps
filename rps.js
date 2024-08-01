@@ -26,8 +26,12 @@ function getHumanChoice(){
 
     let humanChoice = prompt("Please choose ROCK, SCISSORS, PAPER").toUpperCase();
 
-    if(!validateHumanChoice(humanChoice)) return;
-    else return humanChoice;
+    while(!validateHumanChoice(humanChoice)){
+
+        humanChoice = prompt("Invalid choice, please choose ROCK SCISSORS PAPER only").toUpperCase();
+    }
+
+    return humanChoice;
 
 }
 
