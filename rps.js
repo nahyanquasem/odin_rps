@@ -1,7 +1,12 @@
 
 const rps = ['ROCK','SCISSORS', 'PAPER'];
+const player_01_wins = 1;
+const player_02_wins = 2;
+
+
 let humanScore = 0;
 let computerScore = 0;
+
 
 
 function getRandomNumber(maxValue){
@@ -12,7 +17,7 @@ function getRandomNumber(maxValue){
 
 function getComputerChoice(){
 
-    let computerChoice = getRandomNumber(3);
+    let computerChoice = getRandomNumber(rps.length);
     return rps[computerChoice];
 
 }
@@ -41,14 +46,14 @@ function rpsLogic(choice1, choice2){
 
     if (choice1 === choice2) return 0;
 
-    if( (choice1==='ROCK' && choice2==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return 1;}
-    if( (choice1==='SCISSORS' && choice2==='ROCK') ) {console.log('ROCK beats SCISSORS');return 2;}
+    if( (choice1==='ROCK' && choice2==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return player_01_wins;}
+    if( (choice1==='SCISSORS' && choice2==='ROCK') ) {console.log('ROCK beats SCISSORS');return player_02_wins;}
 
-    if( (choice1==='PAPER' && choice2==='ROCK') ) {console.log('PAPER beats ROCK');return 1;}
-    if( (choice1==='ROCK' && choice2==='PAPER') ) {console.log('PAPER beats ROCK');return 2;}
+    if( (choice1==='PAPER' && choice2==='ROCK') ) {console.log('PAPER beats ROCK');return player_01_wins;}
+    if( (choice1==='ROCK' && choice2==='PAPER') ) {console.log('PAPER beats ROCK');return player_02_wins;}
 
-    if( (choice1==='SCISSORS' && choice2==='PAPER') ) {console.log('SCISSORS beats PAPER');return 1;}
-    if( (choice1==='PAPER' && choice2==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return 2;}
+    if( (choice1==='SCISSORS' && choice2==='PAPER') ) {console.log('SCISSORS beats PAPER');return player_01_wins;}
+    if( (choice1==='PAPER' && choice2==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return player_02_wins;}
     
 }
 
@@ -60,18 +65,18 @@ function playRound(){
     console.log(`Computer chose ${computerInput}`);
     console.log(`Human chose ${humanInput}`)
 
-    let outcome = rpsLogic(computerInput, humanInput);
+    let roundWinner = rpsLogic(computerInput, humanInput);
 
-    if (outcome === 0){
+    if (roundWinner === 0){
         console.log('DRAW this round');
     }
 
-    else if (outcome === 1){
+    else if (roundWinner === player_01_wins){
         console.log('Computer wins round');
         computerScore = computerScore+1;
     }
 
-    else if (outcome === 2){
+    else if (roundWinner === player_02_wins){
         console.log('Human wins round');
         humanScore = humanScore+1;
     }
