@@ -40,20 +40,20 @@ function getHumanChoice(){
 
 }
 
-function rpsLogic(choice1, choice2){
+function rpsLogic(player_01_choice, player_02_choice){
 
     // Rock beats scissors, scissors beat paper, and paper beats rock.
 
-    if (choice1 === choice2) return 0;
+    if (player_01_choice === player_02_choice) return 0;
 
-    if( (choice1==='ROCK' && choice2==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return player_01_wins;}
-    if( (choice1==='SCISSORS' && choice2==='ROCK') ) {console.log('ROCK beats SCISSORS');return player_02_wins;}
+    if( (player_01_choice==='ROCK' && player_02_choice==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return player_01_wins;}
+    if( (player_01_choice==='SCISSORS' && player_02_choice==='ROCK') ) {console.log('ROCK beats SCISSORS');return player_02_wins;}
 
-    if( (choice1==='PAPER' && choice2==='ROCK') ) {console.log('PAPER beats ROCK');return player_01_wins;}
-    if( (choice1==='ROCK' && choice2==='PAPER') ) {console.log('PAPER beats ROCK');return player_02_wins;}
+    if( (player_01_choice==='PAPER' && player_02_choice==='ROCK') ) {console.log('PAPER beats ROCK');return player_01_wins;}
+    if( (player_01_choice==='ROCK' && player_02_choice==='PAPER') ) {console.log('PAPER beats ROCK');return player_02_wins;}
 
-    if( (choice1==='SCISSORS' && choice2==='PAPER') ) {console.log('SCISSORS beats PAPER');return player_01_wins;}
-    if( (choice1==='PAPER' && choice2==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return player_02_wins;}
+    if( (player_01_choice==='SCISSORS' && player_02_choice==='PAPER') ) {console.log('SCISSORS beats PAPER');return player_01_wins;}
+    if( (player_01_choice==='PAPER' && player_02_choice==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return player_02_wins;}
     
 }
 
