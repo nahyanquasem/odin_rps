@@ -104,4 +104,4 @@ function playGame(){
     console.log('Game over');
 }
 
-playGame();
+// playGame();
