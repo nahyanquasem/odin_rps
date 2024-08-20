@@ -89,8 +89,10 @@ function playGame(){
     console.log('Best of 5 Match, first to 3 points wins');
 
     let round = 1;
+    humanScore = 0;
+    computerScore = 0;
 
-    while( (round <=5) && ( (computerScore != 3) || (humanScore != 3) )){
+    while( (round <=5) &&  (computerScore != 3) && (humanScore != 3) ) {
 
         console.log(`#############   Round ${round}   #############`);
         playRound();

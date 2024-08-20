@@ -1,5 +1,3 @@
-import './rps.js'
-
 
 const playGameButton = document.querySelector('#playGameButton');
 
