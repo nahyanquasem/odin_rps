@@ -10,7 +10,20 @@ playGameButton.addEventListener('click', ()=>{
 playerChoiceButton.addEventListener('click', (e) => {
 
     let playerChoice = e.target.textContent;
-    console.log(playerChoice);
+
+    switch (playerChoice) {
+        case 'ROCK':
+            console.log('You have entered ROCK');
+            break;
+        case 'PAPER':
+            console.log('You have entered PAPER');
+            break;
+        case 'SCISSORS':
+            console.log('You have entered SCISSOR');
+            break;
+        default:
+            console.log('Invalid Input');
+    }
     
 });
 
