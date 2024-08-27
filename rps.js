@@ -57,10 +57,10 @@ function rpsLogic(player_01_choice, player_02_choice){
     
 }
 
-function playRound(){
+function playRound(humanInput){
 
     let computerInput = getComputerChoice();
-    let humanInput = getHumanChoice();
+    // let humanInput = getHumanChoice();
 
     console.log(`Computer chose ${computerInput}`);
     console.log(`Human chose ${humanInput}`)
@@ -104,6 +104,12 @@ function playGame(){
     else {console.log(`Human wins with ${humanScore} points`);}
 
     console.log('Game over');
+}
+
+function resetGame(){
+    computerScore = 0;
+    humanScore = 0;
+
 }
 
 // playGame();

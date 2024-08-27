@@ -1,29 +1,27 @@
 
-const playGameButton = document.querySelector('#playGameButton');
+// const playGameButton = document.querySelector('#playGameButton');
 const playerChoiceButton = document.querySelector('#playerChoice');
+const resetButton = document.querySelector('#resetButton');
+
+const playerScoreValue = document.querySelector('#playerScore');
+const computerScoreValue = document.querySelector('#computerScore');
 
 
-playGameButton.addEventListener('click', ()=>{
-    playGame();
+// playGameButton.addEventListener('click', ()=>{
+//     playGame();
+// });
+
+resetButton.addEventListener('click', () =>{
+    resetGame();
 });
 
 playerChoiceButton.addEventListener('click', (e) => {
 
     let playerChoice = e.target.textContent;
+    playRound(playerChoice);
 
-    switch (playerChoice) {
-        case 'ROCK':
-            console.log('You have entered ROCK');
-            break;
-        case 'PAPER':
-            console.log('You have entered PAPER');
-            break;
-        case 'SCISSORS':
-            console.log('You have entered SCISSOR');
-            break;
-        default:
-            console.log('Invalid Input');
-    }
-    
+    playerScoreValue.textContent = `Player Score: ${humanScore}`;
+    computerScoreValue.textContent = `Computer Score: ${computerScore}`;
+
+ 
 });
-
