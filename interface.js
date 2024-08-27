@@ -13,15 +13,21 @@ const computerScoreValue = document.querySelector('#computerScore');
 
 resetButton.addEventListener('click', () =>{
     resetGame();
+    showScores(humanScore, computerScore)
 });
 
 playerChoiceButton.addEventListener('click', (e) => {
 
     let playerChoice = e.target.textContent;
     playRound(playerChoice);
+    showScores(humanScore, computerScore)
 
+    
+    
+});
+
+function showScores(humanScore, computerScore){
+    
     playerScoreValue.textContent = `Player Score: ${humanScore}`;
     computerScoreValue.textContent = `Computer Score: ${computerScore}`;
-
- 
-});
+}
