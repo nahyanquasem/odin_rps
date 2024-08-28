@@ -1,3 +1,7 @@
+const playerChoiceOutput = document.querySelector('#playerChoiceOutput');
+const computerChoiceOutput = document.querySelector('#computerChoiceOutput');
+const roundStateOutput = document.querySelector('#roundState');
+const gameLogicOutput = document.querySelector('#gameLogicOutput');
 
 const rps = ['ROCK','SCISSORS', 'PAPER'];
 const player_01_wins = 1;
@@ -6,13 +10,14 @@ const player_02_wins = 2;
 
 let humanScore = 0;
 let computerScore = 0;
+let roundCount = 0;
 
 
 
 function getRandomNumber(maxValue){
-
+    
     return Math.floor((Math.random() * maxValue));
-
+    
 }
 
 function getComputerChoice(){
@@ -44,40 +49,57 @@ function rpsLogic(player_01_choice, player_02_choice){
 
     // Rock beats scissors, scissors beat paper, and paper beats rock.
 
+
+    let RBS = 'ROCK beats SCISSORS';
+    let PBR = 'PAPER beats ROCK';
+    let SBR = 'SCISSORS beats PAPER';
+
     if (player_01_choice === player_02_choice) return 0;
 
-    if( (player_01_choice==='ROCK' && player_02_choice==='SCISSORS') ) {console.log('ROCK beats SCISSORS');return player_01_wins;}
-    if( (player_01_choice==='SCISSORS' && player_02_choice==='ROCK') ) {console.log('ROCK beats SCISSORS');return player_02_wins;}
+    if( (player_01_choice==='ROCK' && player_02_choice==='SCISSORS') ) {console.log('ROCK beats SCISSORS');gameLogicOutput.textContent = RBS;return player_01_wins;}
+    if( (player_01_choice==='SCISSORS' && player_02_choice==='ROCK') ) {console.log('ROCK beats SCISSORS');gameLogicOutput.textContent = RBS;return player_02_wins;}
 
-    if( (player_01_choice==='PAPER' && player_02_choice==='ROCK') ) {console.log('PAPER beats ROCK');return player_01_wins;}
-    if( (player_01_choice==='ROCK' && player_02_choice==='PAPER') ) {console.log('PAPER beats ROCK');return player_02_wins;}
+    if( (player_01_choice==='PAPER' && player_02_choice==='ROCK') ) {console.log('PAPER beats ROCK');gameLogicOutput.textContent = PBR;return player_01_wins;}
+    if( (player_01_choice==='ROCK' && player_02_choice==='PAPER') ) {console.log('PAPER beats ROCK');gameLogicOutput.textContent = PBR;return player_02_wins;}
 
-    if( (player_01_choice==='SCISSORS' && player_02_choice==='PAPER') ) {console.log('SCISSORS beats PAPER');return player_01_wins;}
-    if( (player_01_choice==='PAPER' && player_02_choice==='SCISSORS') ) {console.log('SCISSORS beats PAPER');return player_02_wins;}
+    if( (player_01_choice==='SCISSORS' && player_02_choice==='PAPER') ) {console.log('SCISSORS beats PAPER');gameLogicOutput.textContent = SBR;return player_01_wins;}
+    if( (player_01_choice==='PAPER' && player_02_choice==='SCISSORS') ) {console.log('SCISSORS beats PAPER');gameLogicOutput.textContent = SBR;return player_02_wins;}
     
 }
 
 function playRound(humanInput){
 
+    
+
     let computerInput = getComputerChoice();
     // let humanInput = getHumanChoice();
 
+    roundCount += 1;
+
     console.log(`Computer chose ${computerInput}`);
-    console.log(`Human chose ${humanInput}`)
+    console.log(`Human chose ${humanInput}`);
+
+    playerChoiceOutput.textContent = `Human chose ${humanInput}`;
+    computerChoiceOutput.textContent = `Computer chose ${computerInput}`;
+
 
     let roundWinner = rpsLogic(computerInput, humanInput);
 
     if (roundWinner === 0){
         console.log('DRAW this round');
+        gameLogicOutput.textContent = '';
+        roundStateOutput.textContent = 'DRAW this round';
     }
 
     else if (roundWinner === player_01_wins){
         console.log('Computer wins round');
+        roundStateOutput.textContent = 'Computer wins round';
         computerScore = computerScore+1;
     }
 
     else if (roundWinner === player_02_wins){
         console.log('Human wins round');
+        roundStateOutput.textContent = 'Human wins round';
         humanScore = humanScore+1;
     }
 
@@ -109,7 +131,11 @@ function playGame(){
 function resetGame(){
     computerScore = 0;
     humanScore = 0;
-
+    roundCount = 0;
+    playerChoiceOutput.textContent = '';
+    computerChoiceOutput.textContent = '';
+    gameLogicOutput.textContent = '';
+    roundStateOutput.textContent = '';
 }
 
 // playGame();

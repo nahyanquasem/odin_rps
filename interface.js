@@ -5,6 +5,7 @@ const resetButton = document.querySelector('#resetButton');
 
 const playerScoreValue = document.querySelector('#playerScore');
 const computerScoreValue = document.querySelector('#computerScore');
+const roundScoreValue = document.querySelector('#roundInfo')
 
 
 // playGameButton.addEventListener('click', ()=>{
@@ -28,5 +29,6 @@ function showScores(humanScore, computerScore){
     
     playerScoreValue.textContent = `Player Score: ${humanScore}`;
     computerScoreValue.textContent = `Computer Score: ${computerScore}`;
+    roundScoreValue.textContent = `Round: ${roundCount}`;
 
 }
