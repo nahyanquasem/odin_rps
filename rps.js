@@ -2,6 +2,7 @@ const playerChoiceOutput = document.querySelector('#playerChoiceOutput');
 const computerChoiceOutput = document.querySelector('#computerChoiceOutput');
 const roundStateOutput = document.querySelector('#roundState');
 const gameLogicOutput = document.querySelector('#gameLogicOutput');
+const gameStateOutput = document.querySelector('#gameStateOutput');
 
 const rps = ['ROCK','SCISSORS', 'PAPER'];
 const player_01_wins = 1;
@@ -69,8 +70,6 @@ function rpsLogic(player_01_choice, player_02_choice){
 
 function playRound(humanInput){
 
-    
-
     let computerInput = getComputerChoice();
     // let humanInput = getHumanChoice();
 
@@ -104,6 +103,7 @@ function playRound(humanInput){
     }
 
     console.log(`Computer Score: ${computerScore}\nHuman Score: ${humanScore}`);
+    checkWinningState();
 }
 
 
@@ -128,6 +128,19 @@ function playGame(){
     console.log('Game over');
 }
 
+function checkWinningState(){
+    if (humanScore === 5){
+
+        gameStateOutput.textContent = 'Players wins the game, reset game to play again';
+
+    }
+    else if (computerScore === 5){
+        gameStateOutput.textContent = 'Computer wins the game, reset game to play again'
+    }
+
+
+}
+
 function resetGame(){
     computerScore = 0;
     humanScore = 0;
@@ -136,6 +149,8 @@ function resetGame(){
     computerChoiceOutput.textContent = '';
     gameLogicOutput.textContent = '';
     roundStateOutput.textContent = '';
+    gameStateOutput.textContent = '';
+    console.clear();
 }
 
 // playGame();
