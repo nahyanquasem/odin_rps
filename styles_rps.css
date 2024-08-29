@@ -2,14 +2,14 @@
 *::after,
 *::before{
 
-    border: 1px solid blueviolet;
+    /* border: 1px solid blueviolet; */
     margin: 2px;
     padding: 2px;
     box-sizing: content-box;
 }
 
 #playerChoiceList{
-    width: 100vh;
+    width: 10vh;
     display: flex;
     justify-content: space-between;
     
