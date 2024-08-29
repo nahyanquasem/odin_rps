@@ -132,25 +132,34 @@ function checkWinningState(){
     if (humanScore === 5){
 
         gameStateOutput.textContent = 'Players wins the game, reset game to play again';
+        removeGameButtons();
 
     }
     else if (computerScore === 5){
         gameStateOutput.textContent = 'Computer wins the game, reset game to play again'
+        removeGameButtons();
     }
 
+}
+
+function removeGameButtons(){
+
+    playerChoiceButton.remove();
 
 }
+
 
 function resetGame(){
     computerScore = 0;
     humanScore = 0;
     roundCount = 0;
-    playerChoiceOutput.textContent = '';
-    computerChoiceOutput.textContent = '';
-    gameLogicOutput.textContent = '';
-    roundStateOutput.textContent = '';
-    gameStateOutput.textContent = '';
+    // playerChoiceOutput.textContent = '';
+    // computerChoiceOutput.textContent = '';
+    // gameLogicOutput.textContent = '';
+    // roundStateOutput.textContent = '';
+    // gameStateOutput.textContent = '';
     console.clear();
+    location.reload();
 }
 
 // playGame();
