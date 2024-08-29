@@ -1,5 +1,5 @@
 
-// const playGameButton = document.querySelector('#playGameButton');
+
 const playerChoiceButton = document.querySelectorAll('#playerChoiceButton');
 const resetButton = document.querySelector('#resetButton');
 
@@ -7,10 +7,6 @@ const playerScoreValue = document.querySelector('#playerScore');
 const computerScoreValue = document.querySelector('#computerScore');
 const roundScoreValue = document.querySelector('#roundInfo');
 
-
-// playGameButton.addEventListener('click', ()=>{
-//     playGame();
-// });
 
 resetButton.addEventListener('click', () =>{
     resetGame();
@@ -28,14 +24,6 @@ playerChoiceButton.forEach((button)=>{
     });
 
 });
-
-// playerChoiceButton.addEventListener('click', (e) => {
-
-//     let playerChoice = e.target.textContent;
-//     playRound(playerChoice);
-//     showScores(humanScore, computerScore);
-    
-// });
 
 function showScores(humanScore, computerScore){
     

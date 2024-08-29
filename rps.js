@@ -1,4 +1,5 @@
 const playerChoiceOutput = document.querySelector('#playerChoiceOutput');
+const playerChoiceDiv = document.querySelector('#playerChoice');
 const computerChoiceOutput = document.querySelector('#computerChoiceOutput');
 const roundStateOutput = document.querySelector('#roundState');
 const gameLogicOutput = document.querySelector('#gameLogicOutput');
@@ -71,7 +72,6 @@ function rpsLogic(player_01_choice, player_02_choice){
 function playRound(humanInput){
 
     let computerInput = getComputerChoice();
-    // let humanInput = getHumanChoice();
 
     roundCount += 1;
 
@@ -128,6 +128,7 @@ function playGame(){
     console.log('Game over');
 }
 
+
 function checkWinningState(){
     if (humanScore === 5){
 
@@ -142,9 +143,10 @@ function checkWinningState(){
 
 }
 
+
 function removeGameButtons(){
 
-    playerChoiceButton.remove();
+    playerChoiceDiv.remove();
 
 }
 
@@ -153,13 +155,6 @@ function resetGame(){
     computerScore = 0;
     humanScore = 0;
     roundCount = 0;
-    // playerChoiceOutput.textContent = '';
-    // computerChoiceOutput.textContent = '';
-    // gameLogicOutput.textContent = '';
-    // roundStateOutput.textContent = '';
-    // gameStateOutput.textContent = '';
     console.clear();
     location.reload();
 }
-
-// playGame();
