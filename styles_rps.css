@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before{
+
+    border: 1px solid blueviolet;
+    margin: 2px;
+    padding: 2px;
+    box-sizing: content-box;
+}
+
+#playerChoiceList{
+    width: 100vh;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+ul{
+    list-style-type: none;
+}
